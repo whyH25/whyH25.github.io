@@ -50,8 +50,20 @@ const projectData = {
       '음성 답변 STT 변환, 이전 답변 맥락을 기억하는 꼬리 질문 생성',
       '면접 종료 후 정성·정량 평가와 시각화 리포트 제공',
     ],
-    role:
-      '회원 인증(일반/구글 소셜 로그인, 이메일 인증, 비밀번호 찾기, 회원탈퇴), 면접방 생성 및 진행 로직(페르소나·프롬프트·응답 저장), STT 연동 및 영어 면접 기능, 피드백 리포트 생성·이메일 발송, 배포 대응을 담당했습니다.',
+    apis: [
+      'OpenAI GPT-4o API — AI 면접관 질문 생성 및 꼬리 질문',
+      'Google Speech-to-Text API — 음성 답변 인식(STT)',
+      'Google Text-to-Speech API — 질문 음성 출력(TTS)',
+      'Google Cloud Storage API — 첨부/음성 파일 저장',
+      'Google OAuth 2.0 — 구글 소셜 로그인',
+    ],
+    role: [
+      '회원 인증 (일반/구글 소셜 로그인, 이메일 인증, 비밀번호 찾기, 회원탈퇴)',
+      '면접방 생성 및 진행 로직 (페르소나·프롬프트·응답 저장)',
+      'STT 연동 및 영어 면접 기능',
+      '피드백 리포트 생성 및 이메일 발송',
+      '배포 대응',
+    ],
     gallery: [
       'img/dada_home1.png',
       'img/dada_home2.png',
@@ -78,8 +90,15 @@ const projectData = {
       '중개인 페이지 매물 등록·수정·삭제 및 리스트/모달 상세',
       '매물 등록 시 주소 API 연동, 카카오맵 마커 표시, 다중 첨부파일',
     ],
-    role:
-      '사용자 페이지의 자유게시판 CRUD(CKEditor5, 추천, 댓글·대댓글, 자동 스크롤), 중개인 페이지의 매물 CRUD(주소 API, 카카오맵 마커, 다중 첨부파일, DatePicker), 그리고 메인 화면 프론트엔드를 직접 개발했습니다.',
+    apis: [
+      'Kakao Maps API — 매물 위치 지도 표시 및 마커',
+      'Daum Postcode API — 매물 등록 시 주소 검색',
+    ],
+    role: [
+      '사용자 페이지 자유게시판 CRUD (CKEditor5, 추천, 댓글·대댓글, 자동 스크롤)',
+      '중개인 페이지 매물 CRUD (주소 API, 카카오맵 마커, 다중 첨부파일, DatePicker)',
+      '메인 화면 프론트엔드 개발',
+    ],
     gallery: ['img/zipzip_home.png', 'img/zipzip_main.png'],
     github: 'https://github.com/whyH25/zipzip',
   },
@@ -128,6 +147,8 @@ const modalMeta = document.getElementById('modalMeta');
 const modalTags = document.getElementById('modalTags');
 const modalBackground = document.getElementById('modalBackground');
 const modalFeatures = document.getElementById('modalFeatures');
+const modalApisSection = document.getElementById('modalApisSection');
+const modalApis = document.getElementById('modalApis');
 const modalRoleSection = document.getElementById('modalRoleSection');
 const modalRole = document.getElementById('modalRole');
 const modalGallery = document.getElementById('modalGallery');
@@ -164,9 +185,26 @@ function openProjectModal(id) {
     modalFeatures.appendChild(li);
   });
 
-  if (data.role) {
+  if (data.apis && data.apis.length) {
+    modalApisSection.hidden = false;
+    modalApis.innerHTML = '';
+    data.apis.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      modalApis.appendChild(li);
+    });
+  } else {
+    modalApisSection.hidden = true;
+  }
+
+  if (data.role && data.role.length) {
     modalRoleSection.hidden = false;
-    modalRole.textContent = data.role;
+    modalRole.innerHTML = '';
+    data.role.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      modalRole.appendChild(li);
+    });
   } else {
     modalRoleSection.hidden = true;
   }
