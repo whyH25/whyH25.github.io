@@ -3,14 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hong Gildong | Developer Portfolio</title>
+<title>Younghyun Kim | Back-End Developer Portfolio</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="navbar">
   <div class="container nav-inner">
-    <a href="#home" class="logo">Gildong.</a>
+    <a href="#home" class="logo"><span class="logo-badge">YH</span>Younghyun<span class="logo-role">Backend</span></a>
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -25,17 +29,67 @@
 <main>
 
   <section id="home" class="hero">
-    <div class="container hero-inner">
-      <p class="eyebrow">Hello, I'm</p>
-      <h1>홍길동 <span class="accent">Hong Gildong</span></h1>
-      <p class="hero-role">Frontend / Backend Developer</p>
-      <p class="hero-desc">
-        사용자 경험과 코드 품질을 함께 고민하는 개발자입니다.<br>
-        아래는 샘플 템플릿이며, 실제 이력과 프로젝트로 채워 넣을 예정입니다.
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-        <a href="#contact" class="btn btn-outline">연락하기</a>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>Hello, I'm</p>
+          <h1>김영현</h1>
+          <p class="hero-name-en">Younghyun Kim</p>
+          <div class="hero-role-line">
+            <span class="role-divider"></span>
+            <p class="hero-role">Back-End Developer</p>
+          </div>
+          <p class="hero-desc">
+            창의적인 웹 서비스를 설계하고 구현하는 백엔드 개발자입니다.<br>
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
+            <a href="#contact" class="btn btn-outline">연락하기</a>
+          </div>
+          <ul class="hero-pills">
+            <li>Spring</li><li>Spring Boot</li><li>Java</li><li>MySQL</li><li>REST API</li><li>AI API</li>
+          </ul>
+        </div>
+
+        <div class="hero-right">
+          <div class="code-panel">
+            <div class="code-panel-header">
+              <span class="code-filename">MemberController.java</span>
+              <span class="code-status">200 OK</span>
+            </div>
+            <pre class="code-body"><span class="tok-anno">@RestController</span>
+<span class="tok-anno">@RequestMapping</span>(<span class="tok-str">"/api/members"</span>)
+<span class="tok-kw">class</span> MemberController {
+
+  <span class="tok-anno">@GetMapping</span>(<span class="tok-str">"/{id}"</span>)
+  ResponseEntity&lt;MemberRes&gt; <span class="tok-fn">find</span>(<span class="tok-anno">@PathVariable</span> Long id) {
+    <span class="tok-kw">return</span> ok(service.find(id));
+  }
+}<span class="code-caret" aria-hidden="true"></span></pre>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <p class="stat-num">SSAFY</p>
+              <p class="stat-label">교육 수료</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-num">6M+</p>
+              <p class="stat-label">실무 인턴 경험</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-num">4</p>
+              <p class="stat-label">팀·개인 프로젝트</p>
+            </div>
+          </div>
+
+          <p class="hero-caption">서버 설계와 API 구현을 중심으로, 필요하면 프론트와 AI 연동까지 함께 맡습니다.</p>
+        </div>
+      </div>
+
+      <div class="hero-availability">
+        <span class="availability-dot"></span>
+        <span>신입 백엔드 포지션 지원 중 · 협업 프로젝트 환영</span>
       </div>
     </div>
   </section>
@@ -46,20 +100,20 @@
       <div class="about-grid">
         <div class="about-text">
           <p>
-            안녕하세요, 저는 문제를 정의하고 해결하는 과정을 즐기는 개발자 홍길동입니다.
-            [간단한 소개 문장을 여기에 작성하세요 — 어떤 개발자인지, 어떤 가치를 중요하게 생각하는지]
-          </p>
-          <p>
-            [경력/학력/관심 분야 등 추가 소개 문단을 여기에 작성하세요.]
+           삼성청년 SW·AI 아카데미 이수 중
           </p>
           <ul class="about-list">
-            <li><strong>이메일</strong> your.email@example.com</li>
+            <li><strong>이메일</strong> csw03105@naver.com</li>
             <li><strong>거주지</strong> Seoul, South Korea</li>
-            <li><strong>학력</strong> OO대학교 컴퓨터공학과</li>
+            <li><strong>지원 분야</strong> Back-End Developer</li>
+            <li><strong>훈련과정</strong> 삼성청년 SW·AI 아카데미 SSAFY <br/> (2026.01 ~ 진행중) 
+              <br/> AWS 자바 기반 웹 풀스택 과정 <br/> (2023.10 ~ 2024.05)</li>
+            <li><strong>경력</strong> (주)커리어넷 (2024.12 ~ 2025.05) <br/> (주)커리어넷 인턴 (2024.10 ~ 2024.12)</li>
+            <li><strong>자격증</strong> 정보처리기사, SQLD, HSK 4급</li>
           </ul>
         </div>
         <div class="about-photo">
-          <div class="photo-placeholder">Profile Photo</div>
+          <img src="img/profile.jpg" alt="김영현 프로필 사진" class="profile-photo">
         </div>
       </div>
     </div>
@@ -70,21 +124,33 @@
       <h2 class="section-title"><span class="num">02.</span> Skills</h2>
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>Frontend</h3>
+          <h3><span class="skill-icon">⚙️</span>Backend</h3>
           <div class="tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+            <span>Java</span><span>Spring</span><span>Spring Boot</span><span>Spring Security</span><span>JSP / Servlet</span>
           </div>
         </div>
         <div class="skill-card">
-          <h3>Backend</h3>
+          <h3><span class="skill-icon">🎨</span>Frontend</h3>
           <div class="tags">
-            <span>Node.js</span><span>Java</span><span>Spring</span><span>MySQL</span>
+            <span>HTML5</span><span>CSS</span><span>JavaScript</span><span>jQuery</span><span>Vue 3</span>
           </div>
         </div>
         <div class="skill-card">
-          <h3>Tools &amp; ETC</h3>
+          <h3><span class="skill-icon">🗄️</span>Database &amp; ORM</h3>
           <div class="tags">
-            <span>Git</span><span>Docker</span><span>Figma</span><span>Notion</span>
+            <span>Oracle</span><span>MySQL</span><span>MyBatis</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3><span class="skill-icon">☁️</span>Infra &amp; Tools</h3>
+          <div class="tags">
+            <span>Git</span><span>AWS</span><span>Google Cloud Storage</span><span>Tomcat 9.0</span><span>Gradle</span><span>Maven</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3><span class="skill-icon">🤖</span>AI &amp; API 연동</h3>
+          <div class="tags">
+            <span>OpenAI GPT API</span><span>Google STT / TTS</span><span>Kakao Map API</span><span>CKEditor5</span>
           </div>
         </div>
       </div>
@@ -96,48 +162,55 @@
       <h2 class="section-title"><span class="num">03.</span> Projects</h2>
       <div class="projects-grid">
 
-        <article class="project-card">
-          <div class="project-thumb">Project 01</div>
+        <article class="project-card" data-project="interviewai" tabindex="0">
+          <div class="project-thumb"><img src="img/dada_home1.png" alt="InterviewAI 홈 화면" loading="lazy"></div>
           <div class="project-body">
-            <h3>프로젝트 이름</h3>
-            <p>프로젝트에 대한 한두 문장 설명을 작성하세요. 어떤 문제를 해결했는지, 어떤 역할을 맡았는지.</p>
+            <h3>다대다(多:多) AI 면접 시뮬레이션 · InterviewAI</h3>
+            <p class="project-short">복수의 AI 면접관과 경쟁 지원자가 함께하는 실전형 AI 면접 시뮬레이션 플랫폼</p>
             <div class="tags small">
-              <span>React</span><span>Node.js</span><span>MongoDB</span>
+              <span>Spring Boot 3</span><span>Vue 3</span><span>OpenAI GPT-4o</span>
             </div>
-            <div class="project-links">
-              <a href="#">GitHub →</a>
-              <a href="#">Live Demo →</a>
-            </div>
+            <p class="project-meta">2026.06 · 2인 팀 프로젝트</p>
+            <span class="project-more">자세히 보기 →</span>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-thumb">Project 02</div>
+        <article class="project-card" data-project="zipzip" tabindex="0">
+          <div class="project-thumb"><img src="img/zipzip_home.png" alt="Zipzip 홈 화면" loading="lazy"></div>
           <div class="project-body">
-            <h3>프로젝트 이름</h3>
-            <p>프로젝트에 대한 한두 문장 설명을 작성하세요. 어떤 문제를 해결했는지, 어떤 역할을 맡았는지.</p>
+            <h3>부동산 중개 웹 서비스 · Zipzip</h3>
+            <p class="project-short">지도 기반 매물 검색과 커뮤니티를 갖춘 부동산 중개 서비스</p>
             <div class="tags small">
-              <span>Vue</span><span>Spring Boot</span><span>MySQL</span>
+              <span>Spring Boot</span><span>Oracle DB</span><span>Kakao Map API</span>
             </div>
-            <div class="project-links">
-              <a href="#">GitHub →</a>
-              <a href="#">Live Demo →</a>
-            </div>
+            <p class="project-meta">2024.04 - 2024.05 (6주) · 5인 팀 프로젝트</p>
+            <span class="project-more">자세히 보기 →</span>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-thumb">Project 03</div>
+        <article class="project-card" data-project="sistagram" tabindex="0">
+          <div class="project-thumb"><img src="img/sistagram_home.png" alt="Sistagram 홈 화면" loading="lazy"></div>
           <div class="project-body">
-            <h3>프로젝트 이름</h3>
-            <p>프로젝트에 대한 한두 문장 설명을 작성하세요. 어떤 문제를 해결했는지, 어떤 역할을 맡았는지.</p>
+            <h3>인스타그램 클론 코딩 · Sistagram</h3>
+            <p class="project-short">회원가입부터 팔로우, 댓글·대댓글까지 구현한 SNS 클론 프로젝트</p>
             <div class="tags small">
-              <span>Next.js</span><span>TypeScript</span><span>Firebase</span>
+              <span>Spring</span><span>MyBatis</span><span>Oracle DB</span>
             </div>
-            <div class="project-links">
-              <a href="#">GitHub →</a>
-              <a href="#">Live Demo →</a>
+            <p class="project-meta">2024.03 (10일) · 개인 프로젝트</p>
+            <span class="project-more">자세히 보기 →</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-project="board" tabindex="0">
+          <div class="project-thumb"><img src="img/JSP게시판_home.png" alt="Board CRUD 홈 화면" loading="lazy"></div>
+          <div class="project-body">
+            <h3>게시판 웹 서비스 · Board CRUD</h3>
+            <p class="project-short">로그인부터 댓글까지, JSP로 처음부터 끝까지 구현한 게시판</p>
+            <div class="tags small">
+              <span>JSP</span><span>Servlet</span><span>Oracle DB</span>
             </div>
+            <p class="project-meta">2024.01 (1주) · 개인 프로젝트</p>
+            <span class="project-more">자세히 보기 →</span>
           </div>
         </article>
 
@@ -150,18 +223,29 @@
       <h2 class="section-title center"><span class="num">04.</span> Contact</h2>
       <p class="contact-desc">궁금한 점이나 협업 제안이 있으시면 언제든 편하게 연락 주세요.</p>
       <div class="contact-links">
-        <a href="mailto:your.email@example.com" class="btn btn-primary">이메일 보내기</a>
-        <a href="#" class="btn btn-outline">GitHub</a>
-        <a href="#" class="btn btn-outline">LinkedIn</a>
+        <a href="mailto:csw03105@naver.com" class="btn btn-primary">이메일 보내기</a>
+        <a href="https://github.com/whyH25" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
       </div>
     </div>
   </section>
 
 </main>
 
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="닫기">✕</button>
+    <div class="modal-thumb" id="modalThumb"></div>
+    <h3 id="modalTitle"></h3>
+    <p class="project-meta" id="modalMeta"></p>
+    <div class="tags small" id="modalTags"></div>
+    <p id="modalDesc"></p>
+    <div class="project-links" id="modalLinks"></div>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="container">
-    <p>&copy; 2026 Hong Gildong. Built with HTML, CSS &amp; JS.</p>
+    <p>&copy; 2026 Younghyun Kim. Built with HTML, CSS &amp; JS.</p>
   </div>
 </footer>
 
