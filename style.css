@@ -739,7 +739,7 @@ body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-  max-width: 560px;
+  max-width: 640px;
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
@@ -806,6 +806,52 @@ body {
   color: var(--text-muted);
   line-height: 1.75;
 }
+
+.modal-section { margin: 26px 0; }
+
+.modal-section-title {
+  margin: 0 0 10px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.modal-feature-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.modal-gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scroll-snap-type: x proximity;
+}
+
+.modal-gallery img {
+  width: 200px;
+  height: 120px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  scroll-snap-align: start;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.modal-gallery img:hover { transform: scale(1.03); }
 
 .project-links { display: flex; gap: 16px; }
 
