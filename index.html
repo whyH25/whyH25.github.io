@@ -7,21 +7,20 @@
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
 <header class="navbar">
   <div class="container nav-inner">
-    <a href="#home" class="logo"><span class="logo-badge">YH</span>Younghyun<span class="logo-role">Backend</span></a>
+    <a href="#" class="logo">YOUNGHYUN KIM</a>
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
   </div>
 </header>
@@ -29,69 +28,16 @@
 <main>
 
   <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-left">
-          <p class="eyebrow"><span class="eyebrow-dot"></span>Hello, I'm</p>
-          <h1>김영현</h1>
-          <p class="hero-name-en">Younghyun Kim</p>
-          <div class="hero-role-line">
-            <span class="role-divider"></span>
-            <p class="hero-role">Back-End Developer</p>
-          </div>
-          <p class="hero-desc">
-            창의적인 웹 서비스를 설계하고 구현하는 백엔드 개발자입니다.<br>
-          </p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-            <a href="#contact" class="btn btn-outline">연락하기</a>
-          </div>
-          <ul class="hero-pills">
-            <li>Spring</li><li>Spring Boot</li><li>Java</li><li>MySQL</li><li>REST API</li><li>AI API</li>
-          </ul>
-        </div>
-
-        <div class="hero-right">
-          <div class="code-panel">
-            <div class="code-panel-header">
-              <span class="code-filename">MemberController.java</span>
-              <span class="code-status">200 OK</span>
-            </div>
-            <pre class="code-body"><span class="tok-anno">@RestController</span>
-<span class="tok-anno">@RequestMapping</span>(<span class="tok-str">"/api/members"</span>)
-<span class="tok-kw">class</span> MemberController {
-
-  <span class="tok-anno">@GetMapping</span>(<span class="tok-str">"/{id}"</span>)
-  ResponseEntity&lt;MemberRes&gt; <span class="tok-fn">find</span>(<span class="tok-anno">@PathVariable</span> Long id) {
-    <span class="tok-kw">return</span> ok(service.find(id));
-  }
-}<span class="code-caret" aria-hidden="true"></span></pre>
-          </div>
-
-          <div class="hero-stats">
-            <div class="stat-card">
-              <p class="stat-num">SSAFY</p>
-              <p class="stat-label">교육 수료</p>
-            </div>
-            <div class="stat-card">
-              <p class="stat-num">6M+</p>
-              <p class="stat-label">실무 인턴 경험</p>
-            </div>
-            <div class="stat-card">
-              <p class="stat-num">4</p>
-              <p class="stat-label">팀·개인 프로젝트</p>
-            </div>
-          </div>
-
-          <p class="hero-caption">서버 설계와 API 구현을 중심으로, 필요하면 프론트와 AI 연동까지 함께 맡습니다.</p>
-        </div>
-      </div>
-
-      <div class="hero-availability">
-        <span class="availability-dot"></span>
-        <span>신입 백엔드 포지션 지원 중 · 협업 프로젝트 환영</span>
+    <div class="container hero-inner">
+      <p class="eyebrow">Hello,</p>
+      <h1><em>Portfolio.</em></h1>
+      <p class="hero-role">김영현 · Back-End Developer / 서비스 기획</p>
+      <div class="hero-actions">
+        <a href="#projects" class="hero-cta">Explore Work <span aria-hidden="true">&#8594;</span></a>
+        <a href="https://github.com/whyH25" target="_blank" rel="noopener" class="hero-cta">GitHub <span aria-hidden="true">&#8594;</span></a>
       </div>
     </div>
+    <a href="#about" class="hero-scroll"><span>Scroll</span></a>
   </section>
 
   <section id="about" class="section">
@@ -99,22 +45,44 @@
       <h2 class="section-title"><span class="num">01.</span> About Me</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>
-           삼성청년 SW·AI 아카데미 이수 중
-          </p>
           <ul class="about-list">
             <li><strong>이메일</strong> csw03105@naver.com</li>
             <li><strong>거주지</strong> Seoul, South Korea</li>
-            <li><strong>지원 분야</strong> Back-End Developer</li>
-            <li><strong>훈련과정</strong> 삼성청년 SW·AI 아카데미 SSAFY <br/> (2026.01 ~ 진행중) 
-              <br/> AWS 자바 기반 웹 풀스택 과정 <br/> (2023.10 ~ 2024.05)</li>
-            <li><strong>경력</strong> (주)커리어넷 (2024.12 ~ 2025.05) <br/> (주)커리어넷 인턴 (2024.10 ~ 2024.12)</li>
+            <li><strong>지원 분야</strong> Back-End Developer / 서비스 기획</li>
+            <li><strong>훈련과정</strong> 삼성청년 SW·AI 아카데미 SSAFY (2026.01 ~ 진행중) 
+              <br/> AWS 자바 기반 웹 풀스택 과정 (2023.10 ~ 2024.05)</li>
+            <li><strong>경력</strong> (주)커리어넷 (2024.10 ~ 2025.05)</li>
             <li><strong>자격증</strong> 정보처리기사, SQLD, HSK 4급</li>
           </ul>
         </div>
-        <div class="about-photo">
-          <img src="img/profile.jpg" alt="김영현 프로필 사진" class="profile-photo">
-        </div>
+        <ol class="timeline">
+          <li>
+            <span class="tl-period">2026.01 — 진행 중</span>
+            <div class="tl-body">
+              <h4>삼성청년 SW·AI 아카데미 SSAFY</h4>
+              <p>AWS·Java 기반 웹 풀스택 과정</p>
+            </div>
+          </li>
+          <li>
+            <span class="tl-period">2024.10 — 2025.05</span>
+            <div class="tl-body">
+              <h4>(주)커리어넷</h4>
+              <p>웹 서비스 개발 및 유지보수</p>
+            </div>
+          </li>
+          <li>
+            <span class="tl-period">2023.10 — 2024.05</span>
+            <div class="tl-body">
+              <h4>AWS Java 기반 웹 풀스택 과정</h4>
+              <p>웹 풀스택 교육 및 프로젝트</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="hero-availability">
+        <span class="availability-dot"></span>
+        <span>신입 백엔드 포지션 지원 중 · 협업 프로젝트 환영</span>
       </div>
     </div>
   </section>
@@ -221,11 +189,14 @@
   <section id="contact" class="section section-alt">
     <div class="container contact-inner">
       <h2 class="section-title center"><span class="num">04.</span> Contact</h2>
-      <p class="contact-desc">궁금한 점이나 협업 제안이 있으시면 언제든 편하게 연락 주세요.</p>
-      <div class="contact-links">
-        <a href="mailto:csw03105@naver.com" class="btn btn-primary">이메일 보내기</a>
-        <a href="https://github.com/whyH25" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-      </div>
+      <!-- <p class="contact-desc">궁금한 점이나 협업 제안이 있으시면<br>언제든 편하게 연락 주세요.</p> -->
+
+      <dl class="contact-info">
+        <dt>Name</dt>
+        <dd>김영현 · Younghyun Kim</dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:csw03105@naver.com">csw03105@naver.com</a></dd>
+      </dl>
     </div>
   </section>
 
@@ -266,6 +237,10 @@
 
     <div class="project-links" id="modalLinks"></div>
   </div>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="확대 이미지">
+  <img alt="">
 </div>
 
 <footer class="footer">

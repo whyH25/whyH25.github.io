@@ -1,26 +1,3 @@
-// Theme toggle (persisted in localStorage)
-const themeToggle = document.getElementById('themeToggle');
-const root = document.documentElement;
-
-function applyTheme(theme) {
-  root.setAttribute('data-theme', theme);
-  themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
-}
-
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  applyTheme(savedTheme);
-} else {
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  applyTheme(prefersDark ? 'dark' : 'light');
-}
-
-themeToggle.addEventListener('click', () => {
-  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  applyTheme(next);
-  localStorage.setItem('theme', next);
-});
-
 // Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.querySelector('.nav-links');
@@ -251,13 +228,28 @@ modalClose.addEventListener('click', closeProjectModal);
 modalOverlay.addEventListener('click', (e) => {
   if (e.target === modalOverlay) closeProjectModal();
 });
+// Gallery lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+modalGallery.addEventListener('click', (e) => {
+  if (e.target.tagName !== 'IMG') return;
+  lightboxImg.src = e.target.src;
+  lightboxImg.alt = e.target.alt;
+  lightbox.classList.add('open');
+});
+
+lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modalOverlay.classList.contains('open')) closeProjectModal();
+  if (e.key !== 'Escape') return;
+  if (lightbox.classList.contains('open')) lightbox.classList.remove('open');
+  else if (modalOverlay.classList.contains('open')) closeProjectModal();
 });
 
 // Scroll reveal animation
 const revealTargets = document.querySelectorAll(
-  '.section-title, .about-grid, .skill-card, .project-card, .contact-desc, .contact-links'
+  '.section-title, .about-grid, .skill-card, .project-card, .contact-desc, .contact-info'
 );
 revealTargets.forEach((el) => el.classList.add('reveal'));
 
