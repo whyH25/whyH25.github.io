@@ -755,6 +755,25 @@ body {
   line-height: 1.9;
 }
 
+/* photo beside the name/email table, centered as one group */
+.contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 40px;
+}
+
+.contact-photo {
+  display: block;
+  width: 78px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--radius);
+}
+
 /* same hairline-row rhythm as the About list; block shrinks to content and centers */
 .contact-info {
   display: grid;
@@ -762,7 +781,6 @@ body {
   column-gap: 32px;
   width: max-content;
   max-width: 100%;
-  margin: 40px auto 0;
   text-align: left;
   border-top: 1px solid var(--border);
 }

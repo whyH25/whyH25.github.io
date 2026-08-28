@@ -249,7 +249,7 @@ document.addEventListener('keydown', (e) => {
 
 // Scroll reveal animation
 const revealTargets = document.querySelectorAll(
-  '.section-title, .about-grid, .skill-card, .project-card, .contact-desc, .contact-info'
+  '.section-title, .about-grid, .skill-card, .project-card, .contact-desc, .contact-card'
 );
 revealTargets.forEach((el) => el.classList.add('reveal'));
 
