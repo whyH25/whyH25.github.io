@@ -13,8 +13,7 @@ navLinks.querySelectorAll('a').forEach((link) => {
 // Project modal
 const projectData = {
   interviewai: {
-    thumb: 'InterviewAI',
-    image: 'img/dada_home1.png',
+    image: 'img/project/dada_home1.png',
     title: '다대다(多:多) AI 면접 시뮬레이션 · InterviewAI',
     meta: '2026.06 (4주) · 2인 팀 프로젝트',
     tags: ['Spring Boot 3', 'Vue 3', 'MySQL', 'OpenAI GPT-4o', 'Google STT/TTS'],
@@ -42,20 +41,19 @@ const projectData = {
       '배포 대응',
     ],
     gallery: [
-      'img/dada_home1.png',
-      'img/dada_home2.png',
-      'img/dada_login.png',
-      'img/dada_crud.png',
-      'img/dada_reportlist.png',
-      'img/dada_reportdetail1.png',
-      'img/dada_reportdatail2.png',
-      'img/dada_reportdetail3.png',
+      'img/project/dada_home1.png',
+      'img/project/dada_home2.png',
+      'img/project/dada_login.png',
+      'img/project/dada_crud.png',
+      'img/project/dada_reportlist.png',
+      'img/project/dada_reportdetail1.png',
+      'img/project/dada_reportdatail2.png',
+      'img/project/dada_reportdetail3.png',
     ],
     github: 'https://github.com/whyH25/dada',
   },
   zipzip: {
-    thumb: 'Zipzip',
-    image: 'img/zipzip_home.png',
+    image: 'img/project/zipzip_home.png',
     title: '부동산 중개 웹 서비스 · Zipzip',
     meta: '2024.04 - 2024.05 (5주) · 5인 팀 프로젝트',
     tags: ['Spring Boot', 'Spring Security', 'Oracle DB', 'MyBatis', 'Kakao Map API'],
@@ -76,12 +74,11 @@ const projectData = {
       '중개인 페이지 매물 CRUD (주소 API, 카카오맵 마커, 다중 첨부파일, DatePicker)',
       '메인 화면 프론트엔드 개발',
     ],
-    gallery: ['img/zipzip_home.png', 'img/zipzip_main.png'],
+    gallery: ['img/project/zipzip_home.png', 'img/project/zipzip_main.png'],
     github: 'https://github.com/whyH25/zipzip',
   },
   board: {
-    thumb: 'Board CRUD',
-    image: 'img/JSP게시판_home.png',
+    image: 'img/project/jsp-board_home.png',
     title: '게시판 웹 서비스 · Board CRUD',
     meta: '2024.02 (3일) · 개인 프로젝트',
     tags: ['JSP', 'Servlet', 'Spring Framework', 'Oracle DB'],
@@ -93,12 +90,11 @@ const projectData = {
       '마이페이지 - 회원정보 조회/수정, 본인 게시글 조회',
       '게시판 CRUD - 회원만 글쓰기, 본인 글 수정·삭제, 댓글·대댓글',
     ],
-    gallery: ['img/JSP게시판_home.png', 'img/JSP게시판_login.png', 'img/JSP게시판_detail.png'],
+    gallery: ['img/project/jsp-board_home.png', 'img/project/jsp-board_login.png', 'img/project/jsp-board_detail.png'],
     github: 'https://github.com/whyH25/miniPro1',
   },
   sistagram: {
-    thumb: 'Sistagram',
-    image: 'img/sistagram_home.png',
+    image: 'img/project/sistagram_home.png',
     title: '인스타그램 클론 코딩 · Sistagram',
     meta: '2024.03 (10일) · 개인 프로젝트',
     tags: ['Spring', 'MyBatis', 'Oracle DB'],
@@ -111,7 +107,7 @@ const projectData = {
       '게시글 작성·수정·삭제, 좋아요, 댓글 및 태그를 통한 대댓글',
       '회원 검색',
     ],
-    gallery: ['img/sistagram_home.png', 'img/sistagram_login.png', 'img/sistagram_detail.png'],
+    gallery: ['img/project/sistagram_home.png', 'img/project/sistagram_login.png', 'img/project/sistagram_detail.png'],
     github: 'https://github.com/whyH25/sistagram',
   },
 };
@@ -131,60 +127,37 @@ const modalRole = document.getElementById('modalRole');
 const modalGallery = document.getElementById('modalGallery');
 const modalLinks = document.getElementById('modalLinks');
 
+function fillList(el, items, tag = 'li') {
+  el.innerHTML = '';
+  (items || []).forEach((text) => {
+    const node = document.createElement(tag);
+    node.textContent = text;
+    el.appendChild(node);
+  });
+}
+
 function openProjectModal(id) {
   const data = projectData[id];
   if (!data) return;
 
-  if (data.image) {
-    modalThumb.innerHTML = '';
-    const img = document.createElement('img');
-    img.src = data.image;
-    img.alt = data.title;
-    modalThumb.appendChild(img);
-  } else {
-    modalThumb.textContent = data.thumb;
-  }
+  modalThumb.innerHTML = '';
+  const thumbImg = document.createElement('img');
+  thumbImg.src = data.image;
+  thumbImg.alt = data.title;
+  modalThumb.appendChild(thumbImg);
+
   modalTitle.textContent = data.title;
   modalMeta.textContent = data.meta;
   modalBackground.textContent = data.background;
 
-  modalTags.innerHTML = '';
-  data.tags.forEach((tag) => {
-    const span = document.createElement('span');
-    span.textContent = tag;
-    modalTags.appendChild(span);
-  });
+  fillList(modalTags, data.tags, 'span');
+  fillList(modalFeatures, data.features);
 
-  modalFeatures.innerHTML = '';
-  (data.features || []).forEach((feature) => {
-    const li = document.createElement('li');
-    li.textContent = feature;
-    modalFeatures.appendChild(li);
-  });
+  modalApisSection.hidden = !(data.apis && data.apis.length);
+  fillList(modalApis, data.apis);
 
-  if (data.apis && data.apis.length) {
-    modalApisSection.hidden = false;
-    modalApis.innerHTML = '';
-    data.apis.forEach((item) => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      modalApis.appendChild(li);
-    });
-  } else {
-    modalApisSection.hidden = true;
-  }
-
-  if (data.role && data.role.length) {
-    modalRoleSection.hidden = false;
-    modalRole.innerHTML = '';
-    data.role.forEach((item) => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      modalRole.appendChild(li);
-    });
-  } else {
-    modalRoleSection.hidden = true;
-  }
+  modalRoleSection.hidden = !(data.role && data.role.length);
+  fillList(modalRole, data.role);
 
   modalGallery.innerHTML = '';
   (data.gallery || []).forEach((src) => {
