@@ -1,16 +1,7 @@
-# Younghyun Kim — Backend Developer Portfolio
-
-> 사용자 중심의 서비스를 설계하고 안정적인 백엔드 시스템을 구현하는 개발자 김영현의 포트폴리오입니다.
+# Backend Developer Portfolio
 
 🔗 **Portfolio**  
 https://whyh25.github.io/
-
-## About
-
-Java와 Spring Boot를 기반으로 REST API와 데이터베이스를 설계하고 구현합니다.
-
-AI 서비스, 웹 서비스, 외부 API 연동 프로젝트를 경험했으며,
-문제의 원인을 분석하고 안정적인 구조로 개선하는 과정을 중요하게 생각합니다.
 
 ## Experience
 
@@ -87,9 +78,6 @@ JSP 기반 게시판 웹 서비스 · 2024.02 (3일) · 개인
 - 댓글 기능 구현
 - JSP, Servlet, Oracle DB 활용
 
-## Repository Structure
-
-빌드 도구 없는 정적 사이트입니다. `index.html`을 브라우저로 열면 그대로 확인할 수 있습니다.
 
 ```text
 ├── index.html   # 포트폴리오 페이지 구조
